@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Антикурение - официальный сайт профилактики и отказа от курения</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">🚭</span>
+                    <span class="logo-text">Антикурение</span>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="#" class="nav-link active" data-section="home">Главная</a></li>
+                        <li><a href="#" class="nav-link" data-section="knowledge">База знаний</a></li>
+                        <li><a href="#" class="nav-link" data-section="tools">Инструменты</a></li>
+                        <li><a href="#" class="nav-link" data-section="community">Сообщество</a></li>
+                        <li><a href="#" class="nav-link" data-section="personal" id="personalNavLink" style="display: none;">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="auth-buttons">
+                    <button class="btn btn-secondary" id="loginBtn">Войти</button>
+                    <button class="btn btn-primary" id="registerBtn">Регистрация</button>
+                    <button class="btn btn-secondary" id="logoutBtn" style="display: none;">Выйти</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главная страница -->
+    <section id="home" class="section home-section">
+        <!-- Главный баннер -->
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Бросьте курить вместе с нами!</h1>
+                    <p>Мы помогли уже более 10 000 человек избавиться от вредной привычки. Присоединяйтесь к нашему сообществу и начните новую жизнь без сигарет.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large" id="startJourneyBtn">Начать путь к здоровью</button>
+                        <button class="btn btn-secondary btn-large" id="learnMoreBtn">Узнать больше</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Статистика -->
+        <div class="section stats">
+            <div class="container">
+                <h2 class="section-title">Наша статистика</h2>
+                <div class="stats-grid">
+                    <div class="stat-card card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-text">Пользователей уже с нами</div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-number">3,500+</div>
+                        <div class="stat-text">Успешных отказов от курения</div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-text">Успешность программ отказа</div>
+                    </div>
+                    <div class="stat-card card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Материалов в базе знаний</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Возможности -->
+        <div class="section">
+            <div class="container">
+                <h2 class="section-title">Ключевые возможности</h2>
+                <div class="features-grid">
+                    <div class="feature-card card">
+                        <div class="feature-icon">📚</div>
+                        <h3>База знаний</h3>
+                        <p>Обширная коллекция статей, видео и инфографики о вреде курения и способах отказа.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Инструменты самоконтроля</h3>
+                        <p>Калькулятор экономии, трекер симптомов и графики прогресса для отслеживания вашего пути.</p>
+                    </div>
+                    <div class="feature-card card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Сообщество поддержки</h3>
+                        <p>Общайтесь с единомышленниками, делитесь опытом и получайте поддержку в трудные моменты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- База знаний -->
+    <section id="knowledge" class="section knowledge-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">База знаний</h2>
+            
+            <div class="knowledge-categories">
+                <button class="category-btn active" data-category="all">Все материалы</button>
+                <button class="category-btn" data-category="harm">Вред курения</button>
+                <button class="category-btn" data-category="methods">Способы отказа</button>
+                <button class="category-btn" data-category="psychology">Психологическая помощь</button>
+                <button class="category-btn" data-category="medicine">Медицинские аспекты</button>
+            </div>
+            
+            <div class="articles-grid" id="articlesContainer">
+                <!-- Статьи будут добавляться через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Инструменты самоконтроля -->
+    <section id="tools" class="section tools-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Инструменты самоконтроля</h2>
+            
+            <div class="tools-container">
+                <div class="tool-card card">
+                    <h3><i class="fas fa-calculator"></i> Калькулятор экономии</h3>
+                    <p>Узнайте, сколько денег вы сэкономите, отказавшись от курения.</p>
+                    
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="cigarettesPerDay">Сколько сигарет вы выкуриваете в день?</label>
+                            <input type="number" id="cigarettesPerDay" min="1" max="100" value="10">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="packPrice">Стоимость пачки сигарет (руб.)</label>
+                            <input type="number" id="packPrice" min="50" max="1000" value="150">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cigarettesInPack">Количество сигарет в пачке</label>
+                            <input type="number" id="cigarettesInPack" min="1" max="50" value="20">
+                        </div>
+                        
+                        <button class="btn btn-primary" id="calculateBtn">Рассчитать экономию</button>
+                        
+                        <div class="result" id="result">
+                            <h4>Ваша потенциальная экономия:</h4>
+                            <p id="dailySavings"></p>
+                            <p id="monthlySavings"></p>
+                            <p id="yearlySavings"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tool-card card">
+                    <h3><i class="fas fa-chart-line"></i> Трекер прогресса</h3>
+                    <p>Отслеживайте ваши успехи в отказе от курения.</p>
+                    
+                    <div class="progress-chart">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="progress-labels">
+                        <span>Начало</span>
+                        <span id="progressDays">0 дней</span>
+                        <span>Цель: 30 дней</span>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label for="progressInput">Сколько дней вы не курите?</label>
+                        <input type="number" id="progressInput" min="0" max="365" value="0">
+                        <button class="btn btn-primary" id="updateProgressBtn" style="margin-top: 10px;">Обновить прогресс</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форум и сообщество -->
+    <section id="community" class="section community-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Форум и сообщество</h2>
+            
+            <div class="forum-container">
+                <div class="card">
+                    <h3>Активные обсуждения</h3>
+                    <p>Присоединяйтесь к нашему сообществу, чтобы получить поддержку и поделиться своим опытом.</p>
+                    
+                    <div class="forum-topics">
+                        <div class="topic card">
+                            <div class="topic-header">
+                                <div class="topic-title">Как справляться с тягой к курению?</div>
+                                <div class="topic-meta">25 комментариев</div>
+                            </div>
+                            <p>Обсуждение методов борьбы с желанием закурить в стрессовых ситуациях.</p>
+                        </div>
+                        <div class="topic card">
+                            <div class="topic-header">
+                                <div class="topic-title">Мой опыт отказа от курения после 15 лет стажа</div>
+                                <div class="topic-meta">42 комментария</div>
+                            </div>
+                            <p>Пользователь делится своей историей и советами для тех, кто только начинает.</p>
+                        </div>
+                        <div class="topic card">
+                            <div class="topic-header">
+                                <div class="topic-title">Лучшие приложения для отслеживания прогресса</div>
+                                <div class="topic-meta">18 комментариев</div>
+                            </div>
+                            <p>Обзор мобильных приложений, которые помогут вам на пути к жизни без сигарет.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary">Перейти на форум</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма регистрации/входа -->
+    <section id="auth" class="section auth-section" style="display: none;">
+        <div class="container">
+            <div class="auth-container">
+                <div class="card">
+                    <div class="auth-tabs">
+                        <button class="auth-tab active" data-tab="login">Вход</button>
+                        <button class="auth-tab" data-tab="register">Регистрация</button>
+                    </div>
+                    
+                    <form id="loginForm" class="auth-form active">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="loginPassword">Пароль</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Войти</button>
+                    </form>
+                    
+                    <form id="registerForm" class="auth-form">
+                        <div class="form-group">
+                            <label for="regEmail">Email</label>
+                            <input type="email" id="regEmail" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regPassword">Пароль</label>
+                            <input type="password" id="regPassword" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="regConfirmPassword">Подтвердите пароль</label>
+                            <input type="password" id="regConfirmPassword" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Зарегистрироваться</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Личный кабинет -->
+    <section id="personal" class="section personal-section" style="display: none;">
+        <div class="container">
+            <div class="dashboard">
+                <div class="sidebar">
+                    <ul class="sidebar-menu">
+                        <li><a href="#" class="sidebar-link active" data-tab="profile">Профиль</a></li>
+                        <li><a href="#" class="sidebar-link" data-tab="progress">Мой прогресс</a></li>
+                        <li><a href="#" class="sidebar-link" data-tab="diary">Дневник отказа</a></li>
+                        <li><a href="#" class="sidebar-link" data-tab="settings">Настройки</a></li>
+                    </ul>
+                </div>
+                
+                <div class="main-content">
+                    <!-- Профиль -->
+                    <div id="profileTab" class="tab-content active">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h2 id="userName">Пользователь</h2>
+                                <p id="userEmail">email@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-stats">
+                            <div class="progress-stat card">
+                                <div class="progress-stat-value" id="daysWithoutSmoking">0</div>
+                                <div class="progress-stat-text">Дней без курения</div>
+                            </div>
+                            <div class="progress-stat card">
+                                <div class="progress-stat-value" id="moneySaved">0</div>
+                                <div class="progress-stat-text">Рублей сэкономлено</div>
+                            </div>
+                            <div class="progress-stat card">
+                                <div class="progress-stat-value" id="healthImprovement">0%</div>
+                                <div class="progress-stat-text">Улучшение здоровья</div>
+                            </div>
+                        </div>
+                        
+                        <h3>Мои достижения</h3>
+                        <div class="achievements">
+                            <div class="card" style="padding: 15px; margin-top: 15px; display: flex; align-items: center; gap: 15px;">
+                                <div style="font-size: 2rem;">🏆</div>
+                                <div>
+                                    <h4>Первая неделя</h4>
+                                    <p>Вы продержались 7 дней без сигарет!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Прогресс -->
+                    <div id="progressTab" class="tab-content">
+                        <h2>Мой прогресс</h2>
+                        <p>Здесь вы можете отслеживать ваши успехи в отказе от курения.</p>
+                        
+                        <div class="progress-chart" style="height: 300px; margin: 30px 0;">
+                            <div class="progress-bar" id="detailedProgressBar" style="width: 0%;"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="quitDate">Дата отказа от курения</label>
+                            <input type="date" id="quitDate">
+                            <button class="btn btn-primary" id="saveQuitDate" style="margin-top: 10px;">Сохранить</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Дневник -->
+                    <div id="diaryTab" class="tab-content">
+                        <h2>Дневник отказа от курения</h2>
+                        <p>Записывайте свои мысли, чувства и успехи на пути к жизни без сигарет.</p>
+                        
+                        <div class="diary-form card">
+                            <div class="form-group">
+                                <label for="diaryDate">Дата</label>
+                                <input type="date" id="diaryDate">
+                            </div>
+                            <div class="form-group">
+                                <label for="diaryMood">Настроение</label>
+                                <select id="diaryMood">
+                                    <option value="5">Отличное</option>
+                                    <option value="4">Хорошее</option>
+                                    <option value="3">Нормальное</option>
+                                    <option value="2">Плохое</option>
+                                    <option value="1">Ужасное</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="diaryCravings">Тяга к курению</label>
+                                <select id="diaryCravings">
+                                    <option value="1">Очень слабая</option>
+                                    <option value="2">Слабая</option>
+                                    <option value="3">Средняя</option>
+                                    <option value="4">Сильная</option>
+                                    <option value="5">Очень сильная</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="diaryNotes">Заметки</label>
+                                <textarea id="diaryNotes" rows="3" style="padding: 12px; border: 1px solid var(--light-gray); border-radius: var(--border-radius); width: 100%;"></textarea>
+                            </div>
+                            <button class="btn btn-primary" id="saveDiaryEntry">Сохранить запись</button>
+                        </div>
+                        
+                        <div class="diary-entries">
+                            <h3>Предыдущие записи</h3>
+                            <div id="diaryEntriesList">
+                                <!-- Записи будут добавляться здесь -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Настройки -->
+                    <div id="settingsTab" class="tab-content">
+                        <h2>Настройки уведомлений</h2>
+                        <p>Настройте, как и когда вы хотите получать уведомления и напоминания.</p>
+                        
+                        <div class="form-group" style="margin-top: 20px;">
+                            <label>
+                                <input type="checkbox" id="emailNotifications" checked> Email уведомления
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="pushNotifications"> Push-уведомления
+                            </label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notificationFrequency">Частота уведомлений</label>
+                            <select id="notificationFrequency">
+                                <option value="daily">Ежедневно</option>
+                                <option value="weekly">Еженедельно</option>
+                                <option value="monthly">Ежемесячно</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-primary" id="saveSettings">Сохранить настройки</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Официальный сайт профилактики и отказа от курения "Антикурение". Мы помогаем людям избавиться от вредной привычки и начать здоровую жизнь.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Разделы сайта</h3>
+                    <ul>
+                        <li><a href="#" class="footer-nav-link" data-section="home">Главная</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="knowledge">База знаний</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="tools">Инструменты</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="community">Сообщество</a></li>
+                        <li><a href="#" class="footer-nav-link" data-section="specialists">Специалистам</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> Email: info@antikurenie.ru</li>
+                        <li><i class="fas fa-phone"></i> Телефон: +7 (495) 123-45-67</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Адрес: Москва, ул. Здоровья, д. 1</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Официальный сайт "Антикурение". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
